@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "fix": "standard --fix",
     "start": "next start",
-    "test": "jest test/"
+    "lint": "standard",
+    "test": "jest"
   },
   "author": "Efosa Oyegun",
   "license": "ISC",
@@ -15,5 +17,13 @@
     "next": "^9.3.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "react-test-renderer": "^16.13.0",
+    "standard": "^14.3.1"
   }
 }
