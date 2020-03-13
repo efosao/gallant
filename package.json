@@ -1,0 +1,19 @@
+{
+  "name": "gallant",
+  "version": "1.0.0",
+  "description": "Gallant code-test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest test/"
+  },
+  "author": "Efosa Oyegun",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
