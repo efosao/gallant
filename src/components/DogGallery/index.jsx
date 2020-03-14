@@ -1,5 +1,6 @@
-import React from 'react'
 import { capitalize, get } from 'lodash'
+import PropTypes from 'prop-types'
+import React from 'react'
 import './index.css'
 
 function DogGallery ({ breeds }) {
@@ -24,6 +25,12 @@ function DogGallery ({ breeds }) {
       </ul>
     </>
   )
+}
+
+DogGallery.propTypes = {
+  breeds: PropTypes.shape({
+    images: PropTypes.arrayOf(PropTypes.string)
+  })
 }
 
 export default DogGallery
