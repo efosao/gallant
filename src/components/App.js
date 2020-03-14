@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '../logo.svg'
 import './App.css'
 import DogPicker from './DogPicker'
 
@@ -8,9 +7,9 @@ function App () {
     <div className='main'>
       <div className='content'>
         <header className='App-header'>
-          {/* <img src={logo} className='App-logo' alt='logo' /> */}
-          <DogPicker />
+          <h2>Dog Finder</h2>
         </header>
+        <DogPicker />
       </div>
       <footer>
         Efosa Oyegun

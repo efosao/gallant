@@ -50,7 +50,6 @@ function DogList () {
 
   return (
     <>
-      <h2>Dog Finder</h2>
       <input
         onChange={onFilterChange}
         placeholder='Filter e.g. akita, african, appen'
