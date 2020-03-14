@@ -1,4 +1,4 @@
-import { isEmpty, lowerCase, startsWith, trim } from 'lodash'
+import { lowerCase, startsWith, trim } from 'lodash'
 import React, { createRef, useState, useEffect } from 'react'
 
 import DogGallery from './DogGallery'
