@@ -1,0 +1,15 @@
+ul {
+    display: grid;
+    grid-template-areas: "a a";
+    grid-auto-columns: auto;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li img {
+    max-height: 180px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
