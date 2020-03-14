@@ -1,5 +1,5 @@
 import React, { createRef, useState, useEffect } from 'react'
-import { includes, trim } from 'lodash'
+import { startsWith, trim } from 'lodash'
 
 import DogGallery from './DogGallery'
 import { fetchDogBreeds } from '../lib/data'
@@ -26,7 +26,10 @@ function DogList () {
       for (let k in breeds) {
         const filtersArr = filters.split(',')
         for (let filter of filtersArr) {
-          if (includes(k, trim(filter))) {
+          const cleanFilter = trim(filter)
+          if (!cleanFilter) {
+            break
+          } else if (startsWith(k, cleanFilter)) {
             filteredBreeds[k] = breeds[k]
             break
           }
