@@ -1,13 +1,15 @@
+import { isEmpty, lowerCase, startsWith, trim } from 'lodash'
 import React, { createRef, useState, useEffect } from 'react'
-import { startsWith, trim } from 'lodash'
 
 import DogGallery from './DogGallery'
 import { fetchDogBreeds } from '../lib/data'
 import { useLocalStorage } from '../lib/hooks'
 
+import './DogPicker.css'
+
 function DogList () {
-  const [ breeds, setBreeds ] = useLocalStorage('breeds', {})
-  const [ breedsToShow, setBreedsToShow ] = useState('breeds', {})
+  const [ breeds, setBreeds ] = useLocalStorage('breeds')
+  const [ breedsToShow, setBreedsToShow ] = useState({})
   const [ filters, setFilters ] = useState('')
 
   const filterRef = createRef();
@@ -18,7 +20,7 @@ function DogList () {
       setBreeds(data)
     }
     if (!breeds) getData()
-  }, [breeds, setBreeds])
+  }, [ breeds, setBreeds ])
 
   useEffect(() => {
     if (filters) {
@@ -26,7 +28,7 @@ function DogList () {
       for (let k in breeds) {
         const filtersArr = filters.split(',')
         for (let filter of filtersArr) {
-          const cleanFilter = trim(filter)
+          const cleanFilter = lowerCase(trim(filter))
           if (!cleanFilter) {
             break
           } else if (startsWith(k, cleanFilter)) {
@@ -48,10 +50,10 @@ function DogList () {
 
   return (
     <>
-      <h2>Dog List</h2>
+      <h2>Dog Finder</h2>
       <input
         onChange={onFilterChange}
-        placeholdef='Filter dogs with commas'
+        placeholder='Filter e.g. akita, african, appen'
         ref={filterRef}
       />
       <DogGallery breeds={breedsToShow} />
