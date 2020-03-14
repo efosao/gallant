@@ -8,11 +8,11 @@ import { useLocalStorage } from '../lib/hooks'
 import './DogPicker.css'
 
 function DogList () {
-  const [ breeds, setBreeds ] = useLocalStorage('breeds')
-  const [ breedsToShow, setBreedsToShow ] = useState({})
-  const [ filters, setFilters ] = useState('')
+  const [breeds, setBreeds] = useLocalStorage('breeds')
+  const [breedsToShow, setBreedsToShow] = useState({})
+  const [filters, setFilters] = useState('')
 
-  const filterRef = createRef();
+  const filterRef = createRef()
 
   useEffect(() => {
     const getData = async () => {
@@ -20,14 +20,14 @@ function DogList () {
       setBreeds(data)
     }
     if (!breeds) getData()
-  }, [ breeds, setBreeds ])
+  }, [breeds, setBreeds])
 
   useEffect(() => {
     if (filters) {
       const filteredBreeds = {}
-      for (let k in breeds) {
+      for (const k in breeds) {
         const filtersArr = filters.split(',')
-        for (let filter of filtersArr) {
+        for (const filter of filtersArr) {
           const cleanFilter = lowerCase(trim(filter))
           if (!cleanFilter) {
             break
