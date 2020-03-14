@@ -1,10 +1,40 @@
 ul {
     display: grid;
-    grid-template-areas: "a a";
     grid-auto-columns: auto;
+    grid-gap: 10px;
+    grid-template-areas: "a a a";
     list-style-type: none;
-    margin: 0;
+    margin: 10px 0 0;
     padding: 0;
+}
+
+@media(max-width: 880px) {
+  ul {
+      grid-template-areas: "a a";
+  }
+}
+
+@media(max-width: 480px) {
+  ul {
+      grid-template-areas: "a";
+  }
+}
+
+.card {
+    background-color: tomato;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation-duration: 0.3s;
+    animation-name: slidein;
 }
 
 li img {
@@ -13,3 +43,17 @@ li img {
     margin: 0;
     padding: 0;
 }
+
+@keyframes slidein {
+    from {
+      opacity: 0;
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      opacity: 1;
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
